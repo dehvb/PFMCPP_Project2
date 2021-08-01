@@ -15,12 +15,12 @@ video: Chapter 2 - Part 3
  
  
  1) Write down the names of all of the primitives available in C++ (excluding wchar_t) here: 
- 
- 
- 
- 
- 
- 
+ int
+ char
+ bool
+ float
+ double
+ void
  
  
  
@@ -60,10 +60,23 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
+    int boats = 5;
+    int bikes = 3;
+    int apples = 12;
+    char firstChar = 'a';
+    char lastChar = 'z';
+    char secondChar = 'b';
+    bool hasLegs = true;
+    bool hasArms = true;
+    bool hasWings = false;
+    float daysLeft = 1.5f;
+    float hoursLeft = 0.5f;
+    float minutesLeft = 3.5f;
+    double moneySpent = 23.99;
+    double moneyOwed = 1.99;
+    double moneyEarned = 200.05;
     
-
-    
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number, boats, bikes, apples, firstChar, lastChar, secondChar, hasLegs, hasArms, hasWings, daysLeft, hoursLeft, minutesLeft, moneySpent, moneyOwed, moneyEarned); //passing each variable declared to the ignoreUnused() function
 }
 
 /*
@@ -80,43 +93,83 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
-
+bool takeCourse(int daysToComplete, int freeTime)
+{ 
+    ignoreUnused(daysToComplete, freeTime);
+    return {};
+}
 /*
  2)
  */
-
+int timeUntilSnack(int numberOfApples, int secondsToCut)
+{ 
+    ignoreUnused(numberOfApples, secondsToCut);
+    return {};
+}
 /*
  3)
  */
-
+float sum(float firstVal, float secondVal, float thirdVal)
+{
+    ignoreUnused(firstVal, secondVal, thirdVal);
+    return {};
+}
 /*
  4)
  */
-
+int positionInAlphabet(char letter)
+{
+    ignoreUnused(letter);
+    return {};
+}
 /*
  5)
  */
-
+int numberLegs(bool lostLeftLeg, bool lostRightLeg)
+{
+    ignoreUnused(lostLeftLeg, lostRightLeg);
+    return {};
+}
 /*
  6)
  */
-
+bool doesItRain(bool hairWet, bool sunShining, int umbrellas = 0)
+{
+    ignoreUnused(hairWet, sunShining, umbrellas);
+    return {};
+}
 /*
  7)
  */
-
+double finalPrice(double price, int discount = 20)
+{
+    ignoreUnused(price, discount);
+    return {};
+}
 /*
  8)
  */
-
+float areaSize(float sideA, float sideB)
+{
+    ignoreUnused(sideA, sideB);
+    return {};
+}
 /*
  9)
  */
-
+bool safeToDrive(bool drankAlcohol, int hoursSinceLastDrink)
+{
+    ignoreUnused(drankAlcohol, hoursSinceLastDrink);
+    return {};
+}
 /*
  10)
  */
-
+double average(int numberA = 1, int numberB = 10)
+{
+    ignoreUnused(numberA, numberB);
+    return {};
+}
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
@@ -137,27 +190,27 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    auto courseTaken = takeCourse(28, 45);
     //2)
-    
+    auto secondsUntilSnack = timeUntilSnack(5, 30);
     //3)
-    
+    auto finalSum = sum(1.34f, 143.21f, 1.0f);
     //4)
-    
+    auto position = positionInAlphabet('m');
     //5)
-    
+    auto legs = numberLegs(true, false);
     //6)
-    
+    auto rain = doesItRain(false, true);
     //7)
-    
+    auto price = finalPrice(29.99, 40);
     //8)
-    
+    auto area = areaSize(20.45f, 31.34f);
     //9)
-    
+    auto shouldDrive = safeToDrive(true, 1);
     //10)
+    auto avg = average(34, 45);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, courseTaken, secondsUntilSnack, finalSum, position, legs, rain, price, area, shouldDrive, avg);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
